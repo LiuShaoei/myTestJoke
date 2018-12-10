@@ -1,6 +1,7 @@
 package xst.app.com.essayjoke;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
@@ -79,6 +80,9 @@ public class MainActivity extends BaseSkinActivity {
                 e.printStackTrace();
             }
         }*/
+
+       //1.启动一个服务.
+        startService(new Intent(this,MessageService.class));
     }
 
     /**
@@ -124,7 +128,10 @@ public class MainActivity extends BaseSkinActivity {
 
     @Override
     protected void initTitle() {
-        new DefaultNavigationBar.Builder(this).setTitle("内涵段子").setRightText("返回").setLefText("下一页").builder();
+        new DefaultNavigationBar.Builder(this).setTitle("内涵段子")
+                .setRightText("下一页").setRightClickListener((v -> {
+                    startActivity(TestRecyclerViewActivity.class);
+        })).builder();
     }
 
 //    @CheckNet

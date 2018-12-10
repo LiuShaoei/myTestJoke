@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -26,11 +27,25 @@ public class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNavigationPa
         return mParams;
     }
 
+    public void setVisible(int viewId, int visible) {
+        View view = findViewById(viewId);
+        view.setVisibility(visible);
+    }
+
     public void setText(int viewId, String text) {
         TextView tv = findViewById(viewId);
         if (!TextUtils.isEmpty(text)) {
             tv.setVisibility(View.VISIBLE);
             tv.setText(text);
+        } else {
+            tv.setVisibility(View.GONE);
+        }
+    }
+
+    public void setLeftIcon(int viewId, int leftRes) {
+        ImageView img = findViewById(viewId);
+        if (leftRes != 0) {
+            img.setImageResource(leftRes);
         }
     }
 
@@ -56,7 +71,7 @@ public class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNavigationPa
         // 1.创建view
         if (mParams.mParent == null) {
             //获取activity的跟布局
-            ViewGroup activityRoot = (ViewGroup)((Activity) (mParams.mContext)).getWindow().getDecorView();
+            ViewGroup activityRoot = (ViewGroup) ((Activity) (mParams.mContext)).getWindow().getDecorView();
             mParams.mParent = (ViewGroup) activityRoot.getChildAt(0);
         }
         if (mParams.mParent == null) {
@@ -64,7 +79,7 @@ public class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNavigationPa
         }
         mNavigationView = LayoutInflater.from(mParams.mContext).inflate(bindLayoutId(), mParams.mParent, false);//传false
         //2.添加
-        mParams.mParent.addView(mNavigationView,0);
+        mParams.mParent.addView(mNavigationView, 0);
         applyView();
     }
 

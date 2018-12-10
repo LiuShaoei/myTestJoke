@@ -43,4 +43,5 @@ dependencies {
     implementation project(':framelibrary')
     //阿里的热修复
     implementation 'com.alipay.euler:andfix:0.5.0@aar'
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.recyclerView"
 }

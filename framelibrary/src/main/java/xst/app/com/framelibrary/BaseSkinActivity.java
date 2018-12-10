@@ -50,7 +50,7 @@ public abstract class BaseSkinActivity extends BaseActivity {
 //                }
 
                 View view  = createView(parent,name,context,attrs);
-                Log.e(TAG,view+"");
+               // Log.e(TAG,view+"");
                 // 2.1一个activity的布局肯定对应多个这样的SkinView
                 if(view != null){
                     List<SkinAttr> skinAttrs = SkinAttrSupport.getSkinAttrs(context ,attrs);

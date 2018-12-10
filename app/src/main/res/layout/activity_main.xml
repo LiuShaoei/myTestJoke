@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/test_bg_color"
+    android:background="@color/blue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:text="我是button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:textColor="@color/pick"
+        android:gravity="center"
+        android:id="@+id/test_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:text="Hello World!"/>
+    <ImageView
+        android:id="@+id/test_image"
+        android:src="@drawable/test_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

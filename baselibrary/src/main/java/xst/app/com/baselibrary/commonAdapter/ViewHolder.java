@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 /**
  * Created by LiuZhaowei on 2018/12/10 0010.
+ * 定制viewHolder,封装功能对外暴露
  */
 public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -48,7 +49,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
-    public ViewHolder setVisible(int viewId,int visible){
+    public ViewHolder setVisible(int viewId, int visible) {
         getView(viewId).setVisibility(visible);
         return this;
     }
@@ -66,6 +67,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         imageLoader.loadImage(imageView, imageLoader.getPath());
         return this;
     }
+
     //实现无关第三方
     public abstract static class HolderImageLoader {
         private String mPath;

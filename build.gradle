@@ -12,10 +12,16 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         jcenter()
+        //Maven URL地址
+        google()
+        maven {
+            url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+        }
+        maven { url "https://jitpack.io" }
     }
 }
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

@@ -1,9 +1,8 @@
-package xst.app.com.essayjoke;
+package xst.app.com.essayjoke.other;
 
 import android.app.Application;
 
 import com.alipay.euler.andfix.patch.PatchManager;
-
 import xst.app.com.baselibrary.ExceptionCrashHandler;
 import xst.app.com.framelibrary.http.DefaultOkHttpEngine;
 import xst.app.com.framelibrary.http.HttpUtils;
@@ -43,4 +42,5 @@ public class BaseApplication extends Application {
         // FixDexManager fixDexManager = new FixDexManager(this);
         // fixDexManager.loadFixDex();
     }
+
 }

@@ -3,25 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:id="@+id/test_bg_color"
-    android:background="@color/blue"
+    android:background="@color/blues"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:text="我是button"
+        android:id="@+id/to_recycler_view"
+        android:text="我是自定义万能的Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+    <Button
+        android:id="@+id/to_custom_view"
+        android:text="我是自定义万能的Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+    <Button
+        android:id="@+id/to_custom_banner"
+        android:text="我是自定义BannerViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+    <Button
+        android:id="@+id/to_letter"
+        android:text="我是自定义letter"
         android:layout_width="match_parent"
         android:layout_height="60dp" />
 
-    <TextView
-        android:textColor="@color/pick"
-        android:gravity="center"
-        android:id="@+id/test_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:text="Hello World!"/>
-    <ImageView
-        android:id="@+id/test_image"
-        android:src="@drawable/test_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>

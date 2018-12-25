@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <xst.app.com.baselibrary.banner.BannerViewPager
+        android:id="@+id/banner_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </xst.app.com.baselibrary.banner.BannerViewPager>
+
+    <RelativeLayout
+        android:id="@+id/banner_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:gravity="center_vertical"
+            android:id="@+id/banner_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="这是广告的描述语言"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/banner_dot_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

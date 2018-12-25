@@ -3,6 +3,6 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="pick">#008577</color>
-    <color name="blue">#694d9f</color>
+    <color name="picks">#008577</color>
+    <color name="blues">#694d9f</color>
 </resources>

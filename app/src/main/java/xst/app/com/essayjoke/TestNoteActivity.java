@@ -9,7 +9,7 @@ import xst.app.com.framelibrary.BaseSkinActivity;
 /**
  * Created by LiuZhaowei on 2018/12/6 0006.
  */
-public class TestNote extends BaseSkinActivity {
+public class TestNoteActivity extends BaseSkinActivity {
 
     @Override
     protected int getLayoutId() {

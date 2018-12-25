@@ -2,8 +2,9 @@ package xst.app.com.baselibrary.commonAdapter;
 
 /**
  * Created by LiuZhaowei on 2018/12/10 0010.
+ * 点击接口回调
  */
-public interface ItemClickListener<DATA> {
+public interface ItemClickListener{
 
-    void setOnItemClick(DATA data, int position);
+    void setOnItemClick(int position);
 }

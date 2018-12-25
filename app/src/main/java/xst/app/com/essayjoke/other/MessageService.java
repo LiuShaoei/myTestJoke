@@ -1,10 +1,12 @@
-package xst.app.com.essayjoke;
+package xst.app.com.essayjoke.other;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
+
+import xst.app.com.essayjoke.UserAidl;
 
 /**
  * Created by LiuZhaowei on 2018/12/10 0010.

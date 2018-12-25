@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".BaseApplication"
+        android:name=".other.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".TestActivity" />
 
-        <service android:name=".MessageService">
+        <service android:name=".other.MessageService">
             <intent-filter>
                 <action android:name="com.study.aidl.user" />
 
@@ -32,6 +32,9 @@
         </service>
 
         <activity android:name=".TestRecyclerViewActivity"></activity>
+        <activity android:name=".CustomViewActivity"/>
+        <activity android:name=".BannerTestActivity"/>
+        <activity android:name=".LetterBarActivity"/>
     </application>
 
 </manifest>

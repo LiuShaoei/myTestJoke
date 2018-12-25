@@ -1,4 +1,4 @@
-package xst.app.com.essayjoke;
+package xst.app.com.essayjoke.bean;
 
 /**
  * Created by LiuZhaowei on 2018/12/10 0010.
@@ -23,4 +23,5 @@ public class TestRecyclerBean {
     }
 
     public int id;
+
 }

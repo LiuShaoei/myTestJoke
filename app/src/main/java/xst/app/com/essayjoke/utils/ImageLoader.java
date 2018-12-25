@@ -1,8 +1,11 @@
-package xst.app.com.baselibrary.commonAdapter;
+package xst.app.com.essayjoke.utils;
 
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+
+import com.squareup.picasso.Picasso;
+
+import xst.app.com.baselibrary.commonAdapter.ViewHolder;
 
 /**
  * Created by LiuZhaowei on 2018/12/10 0010.
@@ -13,6 +16,7 @@ public class ImageLoader extends ViewHolder.HolderImageLoader {
     }
     @Override
     public void loadImage(ImageView imageView, String path) {
-        Glide.with(imageView.getContext()).load(path).into(imageView);
+       // Glide.with(imageView.getContext()).load(path).into(imageView);
+
     }
 }

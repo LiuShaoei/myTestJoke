@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by LiuZhaowei on 2018/12/10 0010.
+ * 共有adapter 单独实现列表可直接继承使用
  */
 public abstract class RecyclerCommonAdapter<DATA> extends RecyclerView.Adapter<ViewHolder> {
 
@@ -62,7 +63,7 @@ public abstract class RecyclerCommonAdapter<DATA> extends RecyclerView.Adapter<V
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         convert(viewHolder, mData.get(position), position);
         if (mItemClickListener != null) {
-            viewHolder.itemView.setOnClickListener((v -> mItemClickListener.setOnItemClick(mData.get(position),position)));
+            viewHolder.itemView.setOnClickListener((v -> mItemClickListener.setOnItemClick(position)));
         }
     }
 

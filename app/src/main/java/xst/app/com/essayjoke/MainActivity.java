@@ -6,13 +6,13 @@ import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
 
-import xst.app.com.baselibrary.dialog.AlertDialog;
 import xst.app.com.baselibrary.ioc.OnClick;
+import xst.app.com.baselibrary.ioc.ViewById;
 import xst.app.com.essayjoke.fixbug.FixDexManager;
 import xst.app.com.essayjoke.other.MessageService;
 import xst.app.com.framelibrary.BaseSkinActivity;
@@ -20,8 +20,10 @@ import xst.app.com.framelibrary.DefaultNavigationBar;
 
 public class MainActivity extends BaseSkinActivity {
     /****Hello World!****/
-   // @ViewById(R.id.test_tv)
-   // private TextView mTestTv;
+    // @ViewById(R.id.test_tv)
+    // private TextView mTestTv;
+    @ViewById(R.id.text)
+    Button mText;
 
     @Override
     protected int getLayoutId() {
@@ -51,28 +53,32 @@ public class MainActivity extends BaseSkinActivity {
 
     }
 
-    @OnClick({R.id.to_recycler_view,R.id.to_custom_view,R.id.to_custom_banner,R.id.to_letter})
-    public void onclick(View view){
+    @OnClick({R.id.to_load, R.id.to_recycler_view, R.id.to_custom_view, R.id.to_custom_banner, R.id.to_letter, R.id.to_tag})
+    public void onclick(View view) {
         int viewId = view.getId();
-        if(R.id.to_recycler_view == viewId){
+        if (R.id.to_recycler_view == viewId) {
             startActivity(TestRecyclerViewActivity.class);
-         //   String skinPath = Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"skin.skin";
-          //  SkinManager.getInstance().loadSkin(skinPath);
-        }else if(R.id.to_custom_view == viewId){
+            //   String skinPath = Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"skin.skin";
+            //  SkinManager.getInstance().loadSkin(skinPath);
+        } else if (R.id.to_custom_view == viewId) {
             //SkinManager.getInstance().restoreDefault();
             startActivity(CustomViewActivity.class);
-        }else if(R.id.to_custom_banner == viewId){
+        } else if (R.id.to_custom_banner == viewId) {
             startActivity(BannerTestActivity.class);
-        }else if(R.id.to_letter == viewId){
+        } else if (R.id.to_letter == viewId) {
             startActivity(LetterBarActivity.class);
+        } else if (R.id.to_tag == viewId) {
+            startActivity(TagActivity.class);
+        } else if (R.id.to_load == viewId) {
+            startActivity(LoadingViewActivity.class);
         }
     }
 
 
     @Override
     protected void initData() {
-      //  mTestTv.setText("Ioc");
-       // fixDexBug();
+        //  mTestTv.setText("Ioc");
+        // fixDexBug();
        /* File fixFile = new File(Environment.getExternalStorageDirectory(), "fix.apatch");
         boolean b = fixFile.exists();
         if (b) {
@@ -87,8 +93,9 @@ public class MainActivity extends BaseSkinActivity {
             }
         }*/
 
-       //1.启动一个服务.
-        startService(new Intent(this,MessageService.class));
+        //1.启动一个服务.
+        //  ObserverManager.getInstance().add(this);
+        startService(new Intent(this, MessageService.class));
     }
 
     /**
@@ -136,6 +143,7 @@ public class MainActivity extends BaseSkinActivity {
     protected void initTitle() {
         new DefaultNavigationBar.Builder(this).setTitle("内涵段子").builder();
     }
+
 
 //    @CheckNet
 //    @OnClick({R.id.test_tv, R.id.test_img})

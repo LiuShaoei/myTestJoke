@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.huajia.xmhebao.utils.loading.ShapeView
+        android:layout_marginBottom="82dp"
+        android:id="@+id/shape_view"
+        android:layout_width="25dp"
+        android:layout_height="25dp"/>
+    <View
+        android:id="@+id/view"
+        android:background="@drawable/loading_shadow_bg"
+        android:layout_width="25dp"
+        android:layout_height="3dp"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:text="小麦正在赶来..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

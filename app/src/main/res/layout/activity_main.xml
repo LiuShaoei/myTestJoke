@@ -10,22 +10,33 @@
         android:id="@+id/to_recycler_view"
         android:text="我是自定义万能的Recycler"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="40dp" />
     <Button
         android:id="@+id/to_custom_view"
         android:text="我是自定义万能的Recycler"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="40dp" />
     <Button
         android:id="@+id/to_custom_banner"
         android:text="我是自定义BannerViewPager"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="40dp" />
     <Button
         android:id="@+id/to_letter"
         android:text="我是自定义letter"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/to_tag"
+        android:text="我是自定义tag"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/to_load"
+        android:text="我是自定义loading"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
 
 
 </LinearLayout>

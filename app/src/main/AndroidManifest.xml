@@ -35,6 +35,8 @@
         <activity android:name=".CustomViewActivity"/>
         <activity android:name=".BannerTestActivity"/>
         <activity android:name=".LetterBarActivity"/>
+        <activity android:name=".TagActivity"/>
+        <activity android:name=".LoadingViewActivity"/>
     </application>
 
 </manifest>

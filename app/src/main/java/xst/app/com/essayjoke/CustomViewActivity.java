@@ -113,15 +113,15 @@ public class CustomViewActivity extends BaseSkinActivity {
 
     @Override
     protected void initData() {
-        mQQStepView.setStepMax(4000);
-        ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 3000);
-        valueAnimator.setDuration(3000);
-        valueAnimator.setInterpolator(new DecelerateInterpolator());//这里是插值器,实现先满后快
-        valueAnimator.addUpdateListener((animation -> {
-            float currentStep = (float) animation.getAnimatedValue();
-            mQQStepView.setCurrentStep((int) currentStep);
-        }));
-        valueAnimator.start();
+        mQQStepView.setStepMax(4000,3000);
+//        ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 3000);
+//        valueAnimator.setDuration(3000);
+//        valueAnimator.setInterpolator(new DecelerateInterpolator());//这里是插值器,实现先满后快
+//        valueAnimator.addUpdateListener((animation -> {
+//            float currentStep = (float) animation.getAnimatedValue();
+//            mQQStepView.setCurrentStep((int) currentStep);
+//        }));
+        //valueAnimator.start();
     }
 
     @OnClick({R.id.right_to_left, R.id.left_to_right})
@@ -133,7 +133,6 @@ public class CustomViewActivity extends BaseSkinActivity {
             valueAnimator.setDuration(2000);
             valueAnimator.addUpdateListener((animation -> {
                 float currentProgress = (float) animation.getAnimatedValue();
-
                 mColorChangeText.setCurrentProgress(currentProgress);
 
             }));

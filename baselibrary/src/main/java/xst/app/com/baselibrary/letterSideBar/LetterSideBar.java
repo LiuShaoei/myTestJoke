@@ -14,7 +14,6 @@ import android.view.View;
  * Created by LiuZhaowei on 2018/12/24 0024.
  */
 public class LetterSideBar extends View {
-
     private Paint mPaint;//画笔
     //定义26个字母
     private String[] mLetters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
@@ -102,11 +101,11 @@ public class LetterSideBar extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 //消失非常快,需要延长消失
-                postDelayed(()->{
+                postDelayed(() -> {
                     if (mListener != null) {
                         mListener.touch(mCurrentTouchLetter, false);
                     }
-                },700);
+                }, 700);
                 break;
         }
         return true;
@@ -115,12 +114,24 @@ public class LetterSideBar extends View {
     //触摸回调
     private LetterTouchLetterListener mListener;
 
+    //设置触摸回调事件
     public void setListener(LetterTouchLetterListener mListener) {
         this.mListener = mListener;
     }
 
+    public void setSelectCityColor(String letter) {
+        for (int i = 0; i < mLetters.length; i++) {
+            if (letter.equals(mLetters[i])) {
+                mCurrentTouchLetter = mLetters[i];
+                break;
+            }
+        }
+        invalidate();//重新绘制
+    }
+
+
     public interface LetterTouchLetterListener {
-        void touch(CharSequence letter, boolean isTouch);
+        void touch(String letter, boolean isTouch);
     }
 
     /**

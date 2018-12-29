@@ -13,7 +13,6 @@ import xst.app.com.baselibrary.ioc.OnClick;
 import xst.app.com.baselibrary.ioc.ViewById;
 import xst.app.com.baselibrary.tag.TagAdapter;
 import xst.app.com.baselibrary.tag.TagLayout;
-import xst.app.com.essayjoke.observer.ObserverManager;
 import xst.app.com.framelibrary.BaseSkinActivity;
 
 /**

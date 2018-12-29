@@ -53,27 +53,33 @@ public class MainActivity extends BaseSkinActivity {
 
     }
 
-    @OnClick({R.id.to_load, R.id.to_recycler_view, R.id.to_custom_view, R.id.to_custom_banner, R.id.to_letter, R.id.to_tag})
+    @OnClick({R.id.to_message, R.id.to_load, R.id.to_recycler_view, R.id.to_custom_view, R.id.to_custom_banner, R.id.to_letter, R.id.to_tag})
     public void onclick(View view) {
-        int viewId = view.getId();
-        if (R.id.to_recycler_view == viewId) {
-            startActivity(TestRecyclerViewActivity.class);
-            //   String skinPath = Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"skin.skin";
-            //  SkinManager.getInstance().loadSkin(skinPath);
-        } else if (R.id.to_custom_view == viewId) {
-            //SkinManager.getInstance().restoreDefault();
-            startActivity(CustomViewActivity.class);
-        } else if (R.id.to_custom_banner == viewId) {
-            startActivity(BannerTestActivity.class);
-        } else if (R.id.to_letter == viewId) {
-            startActivity(LetterBarActivity.class);
-        } else if (R.id.to_tag == viewId) {
-            startActivity(TagActivity.class);
-        } else if (R.id.to_load == viewId) {
-            startActivity(LoadingViewActivity.class);
+        switch (view.getId()) {
+            case R.id.to_recycler_view:
+                startActivity(TestRecyclerViewActivity.class);
+                break;
+            case R.id.to_custom_view:
+                startActivity(CustomViewActivity.class);
+                break;
+            case R.id.to_custom_banner:
+                startActivity(BannerTestActivity.class);
+                break;
+            case R.id.to_letter:
+                startActivity(LetterBarActivity.class);
+                break;
+            case R.id.to_tag:
+                startActivity(TagActivity.class);
+                break;
+            case R.id.to_load:
+                startActivity(LoadingViewActivity.class);
+                break;
+            case R.id.to_message:
+                startActivity(MessageActivity.class);
+                break;
         }
-    }
 
+    }
 
     @Override
     protected void initData() {

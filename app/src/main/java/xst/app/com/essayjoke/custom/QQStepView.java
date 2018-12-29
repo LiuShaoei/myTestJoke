@@ -1,5 +1,7 @@
 package xst.app.com.essayjoke.custom;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -10,6 +12,7 @@ import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
 import xst.app.com.essayjoke.R;
 
@@ -94,7 +97,7 @@ public class QQStepView extends View {
         //拿到中心点
         int centerPoint = getWidth() / 2;
         //拿到半径
-        int radius = getWidth() / 2 - mBorderWidth/2;
+        int radius = getWidth() / 2 - mBorderWidth/2 -5;
 
         //6.1画外圆弧 分析边缘显示不完整,描边有宽度,需要减去
         RectF rectF = new RectF(
@@ -119,10 +122,18 @@ public class QQStepView extends View {
         canvas.drawText(stepText,dx,baseLine,mTextPaint);
     }
     //动起来
-    public synchronized void setStepMax(int stepMax){
+    public synchronized void setStepMax(int stepMax,int currentStep){
         this.mStepMax = stepMax;
+        ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, currentStep);
+        valueAnimator.setDuration(3000);
+        valueAnimator.setInterpolator(new DecelerateInterpolator());//这里是插值器,实现先满后快
+        valueAnimator.addUpdateListener((animation -> {
+            float step = (float) animation.getAnimatedValue();
+            setCurrentStep((int) step);
+        }));
+        valueAnimator.start();
     }
-    public synchronized void setCurrentStep(int currentStep){
+    private void setCurrentStep(int currentStep){
         this.mCurrentStep = currentStep;
         invalidate();//不断的重新绘制,里面会调用onDraw()方法.
     }

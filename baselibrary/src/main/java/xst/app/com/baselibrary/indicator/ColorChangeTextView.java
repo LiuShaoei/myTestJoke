@@ -1,4 +1,4 @@
-package xst.app.com.essayjoke.custom;
+package xst.app.com.baselibrary.indicator;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,8 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
-import xst.app.com.essayjoke.R;
-
+import xst.app.com.baselibrary.R;
 
 /**
  * Created by LiuZhaowei on 2018/12/12 0012.
@@ -24,11 +23,10 @@ public class ColorChangeTextView extends AppCompatTextView {
     private float mCurrentProgress = 0.0f;
 
     private int mOriginColor = Color.GRAY;
-    private int mChangeColor = Color.BLUE;
+    private int mChangeColor = Color.RED;
     //实现不同的朝向
     private Direction mDirection = Direction.LEFT_TO_RIGHT;
-
-
+    private Context mContext;
 
     public enum Direction {
         LEFT_TO_RIGHT, RIGHT_TO_LEFT
@@ -44,9 +42,9 @@ public class ColorChangeTextView extends AppCompatTextView {
 
     public ColorChangeTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ColorChangeTextView);
-      //  mOriginColor = array.getColor(R.styleable.ColorChangeTextView_originColor, mOriginColor);
+        mContext = context;
+      //  TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ColorChangeTextView);
+        //  mOriginColor = array.getColor(R.styleable.ColorChangeTextView_originColor, mOriginColor);
         //mChangeColor = array.getColor(R.styleable.ColorChangeTextView_changeColor, mChangeColor);
 
         mChangePaint = getPaintByColor(mChangeColor);
@@ -115,6 +113,18 @@ public class ColorChangeTextView extends AppCompatTextView {
         invalidate();
     }
 
+    public void setResetTextColor(int changePaint) {
+        this.mCurrentProgress = 0;
+        this.mOriginPaint = getPaintByColor(changePaint);
+        invalidate();
+    }
+
+    public void setClickTextColor(int originColor) {
+        this.mCurrentProgress = 1;
+        this.mChangePaint = getPaintByColor(originColor);
+        invalidate();
+    }
+
 
     /**
      * 根据颜色获取画笔
@@ -138,10 +148,30 @@ public class ColorChangeTextView extends AppCompatTextView {
     public void setChangeColor(int red) {
         mChangePaint.setColor(red);
     }
+
     public void setTextSize(int size) {
-        mChangePaint.setTextSize(size);
+        mChangePaint.setTextSize(sp2px(size));
+        mOriginPaint.setTextSize(sp2px(size));
     }
+
+    public void setTextSize(int size, int size1) {
+        mChangePaint.setTextSize(sp2px(size));
+        mOriginPaint.setTextSize(sp2px(size1));
+    }
+
     public void setNOChangeColor(int red) {
         mOriginColor = red;
     }
+
+    /**
+     * 将sp值转换为px值，保证文字大小不变
+     *
+     * @param spValue
+     * @return
+     */
+    public int sp2px(float spValue) {
+        final float fontScale = mContext.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * fontScale + 0.5f);
+    }
+
 }

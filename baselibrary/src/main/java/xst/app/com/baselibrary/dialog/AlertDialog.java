@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import xst.app.com.baselibrary.R;
 
+
 /**
  * Created by LiuZhaowei on 2018/12/7 0007.
  * 自定义万能的dialog
@@ -77,6 +78,23 @@ public class AlertDialog extends Dialog {
          */
         public Builder setText(int viewId, CharSequence text) {
             P.mTextArray.put(viewId, text);
+            return this;
+        }
+
+        /**
+         * 设置图片
+         */
+        public Builder setImage(int viewId, DialogViewHelper.ImageLoader loader) {
+            P.mImageArray.put(viewId, loader);
+            return this;
+        }
+
+        /**
+         * 设置是否点击背景取消
+         */
+
+        public Builder setCancelable(boolean cancelable) {
+            P.mCancelable = cancelable;
             return this;
         }
 

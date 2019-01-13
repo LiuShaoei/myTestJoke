@@ -6,7 +6,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -133,14 +132,14 @@ public class CityListAdapter extends BaseAdapter {
                     @NonNull
                     @Override
                     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                        Log.i("love",i+"");
+                        Log.i("love", i + "");
                         return HotCityViewHolder.get(mContext, viewGroup, R.layout.item_tag);
                     }
 
                     @Override
                     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int i) {
-                        Log.i("love",i+"love");
-                        TextView textView = ((HotCityViewHolder)holder).getView(R.id.tag_tv);
+                        Log.i("love", i + "love");
+                        TextView textView = ((HotCityViewHolder) holder).getView(R.id.tag_tv);
                         textView.setText(mHotCities.get(i).getName());
                     }
 
@@ -151,10 +150,10 @@ public class CityListAdapter extends BaseAdapter {
 
                     @Override
                     public int getItemViewType(int position) {
-                        if(position == 1){
+                        if (position == 1) {
                             return 1;
                         }
-                        if(position == 0){
+                        if (position == 0) {
                             return 0;
                         }
                         return super.getItemViewType(position);
@@ -165,25 +164,23 @@ public class CityListAdapter extends BaseAdapter {
                 //全部城市
                 if (convertView == null) {
                     convertView = mInflater.inflate(R.layout.ui_select_item_city, parent, false);
-                    holder = new CityViewHolder();
-                    holder.setLetter(convertView.findViewById(R.id.tv_item_city_letter));
-                    holder.setName(convertView.findViewById(R.id.tv_item_city_name));
+                    holder = new CityViewHolder(convertView);
                     convertView.setTag(holder);
                 } else {
                     holder = (CityViewHolder) convertView.getTag();
                 }
                 if (position >= 1) {
                     final String city = mCities.get(position).getName();
-                    holder.getName().setText(city);
+                    holder.mTextName.setText(city);
                     String currentLetter = getFirstLetter(mCities.get(position).getPinyin());
                     String previousLetter = position >= 1 ? getFirstLetter(mCities.get(position - 1).getPinyin()) : "";
                     if (!TextUtils.equals(currentLetter, previousLetter)) {
-                        holder.getLetter().setVisibility(View.VISIBLE);
-                        holder.getLetter().setText(currentLetter);
+                        holder.mTextLetter.setVisibility(View.VISIBLE);
+                        holder.mTextLetter.setText(currentLetter);
                     } else {
-                        holder.getLetter().setVisibility(View.GONE);
+                        holder.mTextLetter.setVisibility(View.GONE);
                     }
-                    holder.getName().setOnClickListener(v -> {
+                    holder.mTextName.setOnClickListener(v -> {
                         if (onCityClickListener != null) {
                             onCityClickListener.onCityClickListener(city);
                         }
@@ -230,22 +227,12 @@ public class CityListAdapter extends BaseAdapter {
     }
 
     private class CityViewHolder {
-        public TextView getLetter() {
-            return letter;
-        }
+        private TextView mTextName;
+        private TextView mTextLetter;
 
-        public void setLetter(TextView letter) {
-            this.letter = letter;
+        public CityViewHolder(View view) {
+            this.mTextLetter = view.findViewById(R.id.tv_item_city_letter);
+            this.mTextName = view.findViewById(R.id.tv_item_city_name);
         }
-
-        public TextView getName() {
-            return name;
-        }
-
-        public void setName(TextView name) {
-            this.name = name;
-        }
-        TextView letter;
-        TextView name;
     }
 }

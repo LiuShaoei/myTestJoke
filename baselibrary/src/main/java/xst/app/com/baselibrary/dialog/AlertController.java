@@ -37,6 +37,17 @@ class AlertController {
         mViewHelper.setText(viewId, text);
     }
 
+    /**
+     * 设置图片
+     *
+     * @param viewId
+     * @param loader
+     */
+    private void setImage(int viewId, DialogViewHelper.ImageLoader loader) {
+        mViewHelper.setImage(viewId, loader);
+    }
+
+
     public <T extends View> T getView(int viewId) {
         return mViewHelper.getView(viewId);
     }
@@ -81,6 +92,9 @@ class AlertController {
         public int mGravity = Gravity.CENTER;
         //高度
         public int mHeight = ViewGroup.LayoutParams.WRAP_CONTENT;
+
+        //存放图片的
+        SparseArray<DialogViewHelper.ImageLoader> mImageArray = new SparseArray<>();
         //存放字体的修改
         SparseArray<CharSequence> mTextArray = new SparseArray<>();
         //存放点击事件
@@ -114,7 +128,11 @@ class AlertController {
 
             //设置Controller的辅助类
             mAlert.setViewHelper(viewHelper);
-
+            //设置图片
+            int imageArraySize = mImageArray.size();
+            for (int i = 0; i < imageArraySize; i++) {
+                mAlert.setImage(mImageArray.keyAt(i), mImageArray.valueAt(i));
+            }
             //2.设置文本
             int textArraySize = mTextArray.size();
             for (int i = 0; i < textArraySize; i++) {
@@ -144,5 +162,7 @@ class AlertController {
 
         }
     }
+
+
 }
 

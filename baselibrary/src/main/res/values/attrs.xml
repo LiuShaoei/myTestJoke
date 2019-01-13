@@ -2,24 +2,35 @@
 <resources>
     <declare-styleable name="BannerView">
         <!-- 点的颜色-->
-        <attr name="dotIndicatorFocus" format="color|reference"/>
-        <attr name="dotIndicatorNormal" format="color|reference"/>
+        <attr name="dotIndicatorFocus" format="color|reference" />
+        <attr name="dotIndicatorNormal" format="color|reference" />
         <!--点的大小-->
-        <attr name="dotSize" format="dimension"/>
+        <attr name="dotSize" format="dimension" />
         <!--点的间距-->
-        <attr name="dotDistance" format="dimension"/>
+        <attr name="dotDistance" format="dimension" />
         <!--点的位置-->
         <attr name="dotGravity" format="enum">
-            <enum name="center" value="0"/>
-            <enum name="right" value="1"/>
-            <enum name="left" value="-1"/>
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+            <enum name="left" value="-1" />
         </attr>
         <!--底部的颜色-->
-        <attr name="bottomColor" format="color"/>
-        <attr name="bottomHeight" format="dimension"/>
+        <attr name="bottomColor" format="color" />
+        <attr name="bottomHeight" format="dimension" />
     </declare-styleable>
 
-    <declare-styleable name="LetterSideBar">
-
+    <declare-styleable name="TrackIndicatorView">
+        <!--一屏幕标题的个数-->
+        <attr name="tabVisibleNum" format="integer" />
+        <!--下划线的高度-->
+        <attr name="indicatorHeight" format="dimension" />
+        <!--是否有下划线-->
+        <attr name="indicatorBoolean" format="boolean" />
+        <!--下划线的颜色-->
+        <attr name="indicatorColor" format="color|reference" />
+        <attr name="indicatorWidth" format="enum">
+            <enum name="characterWidth" value="0" />
+            <enum name="characterWidgetWidth" value="1" />
+        </attr>
     </declare-styleable>
 </resources>

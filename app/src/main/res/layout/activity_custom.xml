@@ -6,24 +6,24 @@
     android:orientation="vertical">
 
     <xst.app.com.essayjoke.custom.QQStepView
-        android:layout_margin="10dp"
         android:id="@+id/step_view"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:layout_gravity="center"
+        android:layout_margin="10dp"
         app:borderWidth="6dp"
         app:innerColor="@color/blues"
         app:outerColor="@color/colorPrimary"
         app:stepTextColor="@color/colorAccent"
         app:stepTextSize="15sp" />
 
-    <xst.app.com.essayjoke.custom.ColorChangeTextView
-        android:id="@+id/color_change_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="AAAAAAAA"
-        android:textSize="30sp" />
+    <!--<xst.app.com.essayjoke.custom.ColorChangeTextView-->
+        <!--android:id="@+id/color_change_text"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="AAAAAAAA"-->
+        <!--android:textSize="30sp" />-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,15 +47,19 @@
             android:text="右到左" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linear_layout"
+    <xst.app.com.baselibrary.indicator.TrackIndicatorView
+        android:id="@+id/track_indicator_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ddd"
+        app:indicatorBoolean="true"
+        app:indicatorHeight="2dp"
+        app:indicatorWidth="characterWidgetWidth" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+        android:layout_height="match_parent" />
 </LinearLayout>

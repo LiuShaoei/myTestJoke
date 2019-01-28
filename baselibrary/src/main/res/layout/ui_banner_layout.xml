@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <xst.app.com.baselibrary.banner.BannerViewPager
+    <lzw.app.com.baselibrary.banner.BannerViewPager
         android:id="@+id/banner_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </xst.app.com.baselibrary.banner.BannerViewPager>
+    </lzw.app.com.baselibrary.banner.BannerViewPager>
 
     <RelativeLayout
         android:id="@+id/banner_bottom_view"

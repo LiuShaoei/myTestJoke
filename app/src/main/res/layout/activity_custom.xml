@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <xst.app.com.essayjoke.custom.QQStepView
+    <lzw.app.com.essayjoke.custom.QQStepView
         android:id="@+id/step_view"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
@@ -17,7 +17,7 @@
         app:stepTextColor="@color/colorAccent"
         app:stepTextSize="15sp" />
 
-    <!--<xst.app.com.essayjoke.custom.ColorChangeTextView-->
+    <!--<lzw.app.com.essayjoke.custom.ColorChangeTextView-->
         <!--android:id="@+id/color_change_text"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -47,7 +47,7 @@
             android:text="右到左" />
     </LinearLayout>
 
-    <xst.app.com.baselibrary.indicator.TrackIndicatorView
+    <lzw.app.com.baselibrary.indicator.TrackIndicatorView
         android:id="@+id/track_indicator_view"
         android:layout_width="match_parent"
         android:layout_height="60dp"

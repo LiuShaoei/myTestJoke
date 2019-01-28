@@ -44,5 +44,12 @@
         android:layout_width="match_parent"
         android:layout_height="40dp" />
 
+    <Button
+        android:onClick="testClick"
+        android:text="我是自定义Message"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
 
 </LinearLayout>

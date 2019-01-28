@@ -8,7 +8,7 @@
         android:id="@+id/test_unregister"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
-    <xst.app.com.baselibrary.tag.TagLayout
+    <lzw.app.com.baselibrary.tag.TagLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -46,12 +46,12 @@
             android:text="我是中国人"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    </xst.app.com.baselibrary.tag.TagLayout>
-    <xst.app.com.baselibrary.tag.TagLayout
+    </lzw.app.com.baselibrary.tag.TagLayout>
+    <lzw.app.com.baselibrary.tag.TagLayout
         android:layout_width="match_parent"
         android:id="@+id/tag_view"
         android:layout_height="wrap_content">
 
-    </xst.app.com.baselibrary.tag.TagLayout>
+    </lzw.app.com.baselibrary.tag.TagLayout>
 
 </LinearLayout>

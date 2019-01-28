@@ -4,13 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <xst.app.com.baselibrary.banner.BannerViewPager
+    <lzw.app.com.baselibrary.banner.BannerViewPager
         android:id="@+id/banner_viewpager"
         android:layout_width="match_parent"
         android:layout_height="160dp">
-    </xst.app.com.baselibrary.banner.BannerViewPager>
+    </lzw.app.com.baselibrary.banner.BannerViewPager>
 
-    <xst.app.com.baselibrary.banner.BannerView
+    <lzw.app.com.baselibrary.banner.BannerView
         app:dotSize="8dp"
         app:dotDistance="5dp"
         app:dotGravity="right"
@@ -20,7 +20,7 @@
         android:id="@+id/banner_desc"
         android:layout_width="match_parent"
         android:layout_height="180dp">
-    </xst.app.com.baselibrary.banner.BannerView>
+    </lzw.app.com.baselibrary.banner.BannerView>
 
 
 </LinearLayout>

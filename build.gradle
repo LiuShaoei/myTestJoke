@@ -21,6 +21,11 @@ allprojects {
         maven { url "https://jitpack.io" }
     }
 }
+tasks.withType(Javadoc) {//防止编码问题
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
 
 
 task clean(type: Delete) {
@@ -30,6 +35,7 @@ ext{
     compileSdkVersion = 28
     targetSdkVersion = 28
     minSdkVersion = 19
-    buildToolsVersion = '28.0.0'
+    appcompat = '28.0.0'
+    buildToolsVersion = '28.0.3'
     recyclerView = '28.0.0'
 }

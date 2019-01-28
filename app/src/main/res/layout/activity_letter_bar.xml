@@ -51,7 +51,7 @@
             android:divider="@android:color/transparent"
             android:scrollbars="none"></ListView>
 
-        <xst.app.com.baselibrary.letterSideBar.LetterSideBar
+        <lzw.app.com.baselibrary.letterSideBar.LetterSideBar
             android:id="@+id/letter_bar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
